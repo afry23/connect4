@@ -1,0 +1,10 @@
+{application,connect4_engine,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"connect4_engine"},
+              {modules,['Elixir.Connect4Engine',
+                        'Elixir.Connect4Engine.Application',
+                        'Elixir.Connect4Engine.Board',
+                        'Elixir.Connect4Engine.Coordinate']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.Connect4Engine.Application',[]}}]}.
