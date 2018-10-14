@@ -4,7 +4,13 @@ defmodule Connect4Engine.Player do
   @enforce_keys [:name, :color]
   defstruct [:name, :color]
 
-  def new(name, color) do
-    %Player{name: name, color: color}
+  def new(name, :red) do
+    %Player{name: name, color: :red}
   end
+
+  def new(name, :yellow) do
+    %Player{name: name, color: :yellow}
+  end
+
+  def new(_name, _color), do: {:error, :invalide_color}
 end

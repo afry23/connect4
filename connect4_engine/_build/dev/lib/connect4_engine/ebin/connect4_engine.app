@@ -4,7 +4,12 @@
               {modules,['Elixir.Connect4Engine',
                         'Elixir.Connect4Engine.Application',
                         'Elixir.Connect4Engine.Board',
-                        'Elixir.Connect4Engine.Coordinate']},
+                        'Elixir.Connect4Engine.ConnectFourChecker',
+                        'Elixir.Connect4Engine.Coordinate',
+                        'Elixir.Connect4Engine.Display',
+                        'Elixir.Connect4Engine.Game',
+                        'Elixir.Connect4Engine.Player',
+                        'Elixir.Connect4Engine.Rules']},
               {registered,[]},
               {vsn,"0.1.0"},
               {mod,{'Elixir.Connect4Engine.Application',[]}}]}.
