@@ -3,7 +3,6 @@
               {description,"connect4_engine"},
               {modules,['Elixir.Connect4Engine',
                         'Elixir.Connect4Engine.Application',
-                        'Elixir.Connect4Engine.Board',
                         'Elixir.Connect4Engine.ConnectFourChecker',
                         'Elixir.Connect4Engine.Coordinate',
                         'Elixir.Connect4Engine.Display',

@@ -15,6 +15,16 @@ defmodule Connect4Engine.Game do
     %Game{coordinates: coordinates}
   end
 
+  def add(game, col, player) do
+    coordinate =
+      game.coordinates
+      |> Enum.reverse()
+      |> List.flatten()
+      |> Enum.find(fn coordinate -> coordinate.col == col && coordinate.marked_by == nil end)
+    update_coordinate(game, coordinate.row, col, player)
+    assign_winner_if_four_in_a_row(game, player)
+  end
+
   def mark(game, row, col, player) do
     game
     |> update_coordinate(row, col, player)
