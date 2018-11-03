@@ -5,5 +5,8 @@ defmodule Connect4Engine do
     children = [
       {Registry, keys: :unique, name: Connect4Engine.GameRegistry}
     ]
+
+    opts = [strategy: :one_for_one, name: Connect4Engine.GameSupervisor]
+    Supervisor.start_link(children, opts)
   end
 end
