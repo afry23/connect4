@@ -2,13 +2,15 @@ defmodule Connect4Engine.GameServer do
   use GenServer
   alias Connect4Engine.{Game, Rules, Player}
 
-  def start_link(player_name) when is_binary(player_name), do:
-    GenServer.start_link(__MODULE__, player_name, [])
+  def start_link(game_name) when is_binary(game_name), do:
+    GenServer.start_link(__MODULE__, game_name, name: via_tuple(game_name))
 
-  def init(player_name) do
-    player1 = Player.new(player_name, :red)
-    {:ok, %{player1: player1, player2: nil, rules: %Rules{}, game: Game.new()}}
+  def init(game_name) do
+    {:ok, %{player1: nil, player2: nil, rules: %Rules{}, game: Game.new()}}
   end
+
+  def via_tuple(game_name), do:
+    {:via, Registry, {Connect4Engine.GameRegistry, game_name}}
 
   def add_player(game_server, player_name) when is_binary(player_name) do
     GenServer.call(game_server, {:add_player, player_name})

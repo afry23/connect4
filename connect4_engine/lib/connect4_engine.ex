@@ -1,18 +1,9 @@
 defmodule Connect4Engine do
-  @moduledoc """
-  Documentation for Connect4Engine.
-  """
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Connect4Engine.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_start_type, _start_args) do
+    children = [
+      {Registry, keys: :unique, name: Connect4Engine.GameRegistry}
+    ]
   end
 end
