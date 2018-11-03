@@ -7,6 +7,7 @@
                         'Elixir.Connect4Engine.Coordinate',
                         'Elixir.Connect4Engine.Display',
                         'Elixir.Connect4Engine.Game',
+                        'Elixir.Connect4Engine.GameServer',
                         'Elixir.Connect4Engine.Player',
                         'Elixir.Connect4Engine.Rules']},
               {registered,[]},

@@ -1,1 +1,1 @@
-alias Connect4Engine.{Coordinate, Player, Game, Display, Rules}
+alias Connect4Engine.{Coordinate, Player, Game, Display, Rules, GameServer}
