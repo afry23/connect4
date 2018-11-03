@@ -14,6 +14,9 @@ defmodule Connect4Engine.GameServer do
     GenServer.call(game_server, {:add_player, player_name})
   end
 
+  def add_tile(game_server, player, col), do:
+    GenServer.call(game_server, {:add_tile, player, col})
+
   def handle_call({:add_player, player_name}, _from, state_data) do
     with {:ok, rules} <- Rules.check(state_data.rules, :add_player)
     do
@@ -24,6 +27,12 @@ defmodule Connect4Engine.GameServer do
     else
       :error -> {:reply, :error, state_data}
     end
+  end
+
+  def handle_call({:add_tile, player, col}, _from, state) do
+    new_game = Game.add(state.game, col, player)
+    new_state = put_in(state.game, new_game)
+    reply_success(new_state, :ok)
   end
 
   defp update_player2(state_data, name), do:
