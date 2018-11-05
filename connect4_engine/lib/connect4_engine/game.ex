@@ -1,8 +1,8 @@
 defmodule Connect4Engine.Game do
-  alias Connect4Engine.{Game, Coordinate, ConnectFourChecker}
+  alias Connect4Engine.{Game, Coordinate, ConnectFourChecker, Player}
 
   @enforce_keys [:coordinates]
-  defstruct coordinates: nil, winner: nil
+  defstruct coordinates: nil, winner: nil, player1: nil, player2: nil
 
   def new() do
     coordinates =
@@ -11,8 +11,17 @@ defmodule Connect4Engine.Game do
           Coordinate.new(row, col)
         end
       end
-
     %Game{coordinates: coordinates}
+  end
+
+  def add_player_one(game, player_name) do
+    player = Player.new(player_name, :red)
+    %Game{game | player1: player}
+  end
+
+  def add_player_two(game, player_name) do
+    player = Player.new(player_name, :yellow)
+    %Game{game | player2: player}
   end
 
   def add(game, col, player) do
