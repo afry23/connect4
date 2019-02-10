@@ -9,7 +9,8 @@
                         'Elixir.Connect4Engine.Game',
                         'Elixir.Connect4Engine.GameServer',
                         'Elixir.Connect4Engine.Player',
-                        'Elixir.Connect4Engine.Rules']},
+                        'Elixir.Connect4Engine.Rules',
+                        'Elixir.Coonect4Engine.GameSupervisor']},
               {registered,[]},
               {vsn,"0.1.0"},
               {mod,{'Elixir.Connect4Engine.Application',[]}}]}.

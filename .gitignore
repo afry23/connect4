@@ -32,3 +32,4 @@ connect4_engine-*.tar
 .elixir_ls
 *.beam
 /config/*.secret.exs
+_build
